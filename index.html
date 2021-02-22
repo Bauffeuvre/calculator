@@ -1,0 +1,96 @@
+<!html>
+
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8"/>
+</head>
+
+<body>
+<header>
+    <h1>
+        <p>Calculator</p>  
+    </h1>
+</header>
+<div id= calculatorFrame>
+<div id="dials">
+    <div id="display">
+
+        </div>
+    <div id="results">
+        </div>
+</div>
+
+
+<div id="keys">
+<button id="one">1
+</button>
+<button id="two">2
+</button>
+<button id="three">3
+</button>
+<button id="four">4
+</button>
+<button id="five">5
+</button>
+<button id="6">6
+</button>
+<button id="seven">7
+</button>
+<button id="eight">8
+</button>
+<button id="nine">9
+</button>
+<button id="operatorplus">+
+</button>
+<button id="operatorminus">-
+</button>
+<button id="operatorx">X
+</button>
+<button id="operatordivide">/
+</button>
+<button id="equal">=
+</button>
+</div>
+
+<script>
+
+function operate(num1, operator, num2) {
+    
+    if (operator === "+") {
+        sum(num1, num2);
+    }
+    else if (operator === "-")
+        substract(num1, num2);
+    else if (operator === "*")
+        multiply (num1,num2)
+    else if (operator === "/")
+        divide(num1, num2)
+}
+
+
+            function sum(num1, num2) {
+            var res = num1 + num2;
+            console.log(res)
+            }
+            function substract(num1, num2) {
+                var res = num1 - num2;
+                console.log(res)
+            }
+
+            function multiply(num1, num2) {
+                var res = num1 * num2;
+                console.log(res)
+            }
+
+            function divide(num1, num2) {
+                var res = num1 / num2;
+                console.log(res)
+            }
+    </script>
+</body>
+
+<style>
+</style>
+
+</html>
+
