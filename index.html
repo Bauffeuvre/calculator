@@ -16,47 +16,106 @@
     <div id="display">
 
         </div>
-    <div id="results">
-        </div>
+    <p id="results">12345
+    </p>
 </div>
 
-
-<div id="keys">
-<button id="one">1
-</button>
-<button id="two">2
-</button>
-<button id="three">3
-</button>
-<button id="four">4
-</button>
-<button id="five">5
-</button>
-<button id="6">6
-</button>
-<button id="seven">7
-</button>
-<button id="eight">8
-</button>
-<button id="nine">9
-</button>
-<button id="operatorplus">+
-</button>
-<button id="operatorminus">-
-</button>
-<button id="operatorx">X
-</button>
-<button id="operatordivide">/
-</button>
-<button id="equal">=
-</button>
+<div id = "buttons">
+    <div id="keys">
+        <button id="zero" value = "0">0
+        </button>
+        <button id="one" value = "1">1
+        </button>
+        <button id="two" value = "2">2
+        </button>
+        <button id="three" value = "3">3
+        </button>
+        <button id="four" value = "4">4
+        </button>
+        <button id="five" value = "5">5
+        </button>
+        <button id="6" value = "6">6
+        </button>
+        <button id="seven" value = "7">7
+        </button>
+        <button id="eight" value = "8">8
+        </button>
+        <button id="nine" value = "9">9
+        </button>
+    </div>
+<div id= "operators">
+        <button id="operatorplus" value = "+">+
+        </button>
+        <button id="operatorminus" value = "-">-
+        </button>
+        <button id="operatorx" value = "*">X
+        </button>
+        <button id="operatordivide" value = "/">/
+        </button>
+   
+</div>
+</div>
+<div id= "specialOperators">
+    <button id="equal" value = "=">=
+    </button>
+        <button id="clear" value = "clr">Clr
+        </button>
 </div>
 
 <script>
 
-function operate(num1, operator, num2) {
+
+let num = "";
+let num1;
+let num2;
+
+document.getElementById("buttons").addEventListener("click", function() {
+    num += event.target.value
+    document.getElementById("results").innerHTML = num
+    
+})
+
+document.getElementById("clear").addEventListener("click", function() {
+    num = ""
+  console.log(num)
+  document.getElementById("results").innerHTML = num
+})
+
+
+document.getElementById("equal").addEventListener("click", function() {
+    operatorPos = num.search(/[+,\-,*,/]/);
+    operator = num.charAt(operatorPos);
+    num = num.split(/[+,\-,*,/]/) ;
+    let num1 = (num[0]);
+        num1 = parseInt(num1,10)
+    let num2 = num[1] ;
+        num2 = parseInt(num2,10)
     
     if (operator === "+") {
+            var res = num1 + num2; 
+    } 
+    else if (operator === "-") {
+            var res = num1 - num2; 
+    } 
+    else if (operator === "*") {
+            var res = num1 * num2; 
+
+    } 
+    else if (operator === "/") {
+            var res = num1 / num2; 
+
+    }   
+    document.getElementById("results").innerHTML = res
+    num = res
+})
+
+function sum(num1,num2) {
+    res = num1+ num2;
+    console.log(res)
+}
+/* 
+function operate(num1, operator, num2) {
+        if (operator === "+") {
         sum(num1, num2);
     }
     else if (operator === "-")
@@ -72,6 +131,7 @@ function operate(num1, operator, num2) {
             var res = num1 + num2;
             console.log(res)
             }
+
             function substract(num1, num2) {
                 var res = num1 - num2;
                 console.log(res)
@@ -85,7 +145,7 @@ function operate(num1, operator, num2) {
             function divide(num1, num2) {
                 var res = num1 / num2;
                 console.log(res)
-            }
+            } */
     </script>
 </body>
 
